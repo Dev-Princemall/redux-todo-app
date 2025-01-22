@@ -7,7 +7,6 @@ export default function AddTask() {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!taskText.trim()) return;
     const newTask = {
       id: Date.now(),
       text: taskText,

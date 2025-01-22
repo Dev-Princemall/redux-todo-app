@@ -8,7 +8,6 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <App />
-      {console.log(store.getState())}
     </Provider>
   </StrictMode>
 );
