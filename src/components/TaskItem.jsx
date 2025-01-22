@@ -1,26 +1,27 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { toggleTask, removeTask } from "../redux/actions";
-
+import "../styles/TaskItem.css";
 const TaskItem = ({ task }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="Item" style={{ display: "flex", alignItems: "center" }}>
+    <div className="task-item">
       <input
         type="checkbox"
+        className="task-checkbox"
         checked={task.completed}
         onChange={() => dispatch(toggleTask(task.id))}
       />
-      <span
-        style={{
-          textDecoration: task.completed ? "line-through" : "none",
-          flex: 1,
-        }}
-      >
+      <span className={`task-text ${task.completed ? "completed" : ""}`}>
         {task.text}
       </span>
-      <button onClick={() => dispatch(removeTask(task.id))}>Delete</button>
+      <button
+        className="task-delete-button"
+        onClick={() => dispatch(removeTask(task.id))}
+      >
+        Delete
+      </button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../redux/actions";
-
+import "../styles/addTask.css";
 export default function AddTask() {
   const [taskText, setTaskText] = useState("");
   const dispatch = useDispatch();
@@ -17,14 +17,21 @@ export default function AddTask() {
     setTaskText("");
   };
   return (
-    <form className="addtask-form" onSubmit={handleSubmit}>
+    <form className="add-task-form" onSubmit={handleSubmit}>
       <input
         type="text"
+        className="add-task-input"
         value={taskText}
         onChange={(e) => setTaskText(e.target.value)}
         placeholder="Enter a new task"
       />
-      <button type="submit">Add Task</button>
+      <button
+        type="submit"
+        className="add-task-button"
+        disabled={!taskText.trim()}
+      >
+        Add Task
+      </button>
     </form>
   );
 }

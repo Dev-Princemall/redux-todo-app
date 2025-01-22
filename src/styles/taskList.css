@@ -1,0 +1,26 @@
+/* Container for the task list */
+.task-list {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for the task list */
+.task-list-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* Empty task list message */
+.task-list-empty {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+}
