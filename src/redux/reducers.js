@@ -24,9 +24,7 @@ export const todoReducer = (state = initialState, action) => {
       return {
         ...state,
         tasks: state.tasks.map((task) =>
-          task.id === action.payload.id
-            ? { ...task, ...action.payload.updatedTask }
-            : task
+          task.id === action.payload.id ? { ...task, ...action.payload } : task
         ),
       };
     case TOGGLE_TASK:
